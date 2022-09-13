@@ -1,0 +1,9 @@
+* About
+The research in the area of music classification, especially music genre recognition, has been going on for years. Throughout history, there have been different music eras including: Medieval, Renaissance, Baroque, Classical, Romantic etc. The style of music composition in each era is different depending on the elements used, such as the music texture (Polyphony, Homophony), harmony, orchestration, and phrasing, which makes classification possible. This project focuses on an understudied domain of music era classification and an application that helps users determine the era of a specified piece of music.
+* Team Info
+| Member          | Email                    |
+|-----------------+--------------------------|
+| Kin Wo Chang    | kinwo.chang@sjsu.edu     |
+| Puneet Tokhi    | puneet.tokhi@sjsu.edu    |
+| Ramin Mousivand | ramin.mousivand@sjsu.edu |
+| Xin Yu Li       | xinyu.li@sjsu.edu        |

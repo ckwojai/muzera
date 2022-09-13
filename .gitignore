@@ -1,0 +1,11 @@
+.DS_Store
+.idea
+*.log
+tmp/
+
+# Kubernetes
+local/k8s
+.kube
+.minikube
+minikube
+kubectl

@@ -7,12 +7,12 @@ The research in the area of music classification, especially music genre recogni
 2) Install Docker, use [[https://www.docker.com/products/docker-desktop][Docker Desktop]], launch and configure resource CPU to at least 4 and Memory to at least 8GB
 3) Install Minikube, use ~brew install minikube~ or follow [[https://minikube.sigs.k8s.io/docs/start/][the official guide]]
 *** Linux
-1) Run ~./install_prereq_linux.sh~ in root directory to install Docker, Minikube, and Kubectl
+1) Run ~./install_prereq_linux.sh~ in ./k8s directory to install Docker, Minikube, and Kubectl
 ** Build and Deploy App
-1) Run ~./build_app.sh~ in root directory: it will start a minikube cluster and build all images within
-2) Run ~./deploy_app.sh~ in root directory: it will deploy app inside k8s cluster
+1) Run ~./build_app.sh~ in ./k8s directory: it will start a minikube cluster and build all images within
+2) Run ~./deploy_app.sh~ in ./k8s directory: it will deploy app inside k8s cluster
 3) Wait for a few minutes for Cassandra to start up, then run ~./init_db.sh~ to create keyspace and tables.
-4) Run ~./start_dev.sh~ in root directory to spin up dashboard and tunnel to start developing!
+4) Run ~./start_dev.sh~ in ./k8s directory to spin up dashboard and tunnel to start developing!
 * Team Info
 | Member          | Email                    |
 |-----------------+--------------------------|

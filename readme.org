@@ -1,5 +1,18 @@
 * About
 The research in the area of music classification, especially music genre recognition, has been going on for years. Throughout history, there have been different music eras including: Medieval, Renaissance, Baroque, Classical, Romantic etc. The style of music composition in each era is different depending on the elements used, such as the music texture (Polyphony, Homophony), harmony, orchestration, and phrasing, which makes classification possible. This project focuses on an understudied domain of music era classification and an application that helps users determine the era of a specified piece of music.
+* Getting Started (tested on M1 Mac and Ubuntu 20.04)
+** Install Docker, Minikube, and Docker
+*** Mac
+1) Install development packages on Mac using ~xcode-select --install~
+2) Install Docker, use [[https://www.docker.com/products/docker-desktop][Docker Desktop]], launch and configure resource CPU to at least 4 and Memory to at least 8GB
+3) Install Minikube, use ~brew install minikube~ or follow [[https://minikube.sigs.k8s.io/docs/start/][the official guide]]
+*** Linux
+1) Run ~./install_prereq_linux.sh~ in root directory to install Docker, Minikube, and Kubectl
+** Build and Deploy App
+1) Run ~./build_app.sh~ in root directory: it will start a minikube cluster and build all images within
+2) Run ~./deploy_app.sh~ in root directory: it will deploy app inside k8s cluster
+3) Wait for a few minutes for Cassandra to start up, then run ~./init_db.sh~ to create keyspace and tables.
+4) Run ~./start_dev.sh~ in root directory to spin up dashboard and tunnel to start developing!
 * Team Info
 | Member          | Email                    |
 |-----------------+--------------------------|

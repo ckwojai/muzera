@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+    name:   mz-frontend-svc
+
+spec:
+    type: LoadBalancer
+    selector:
+        app:   mz-frontend
+    ports:
+        -   port: 80
+            targetPort: 3000
+            name: mz-frontend-port

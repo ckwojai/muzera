@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mz-frontend-deployment
+  # namespace: mz
+  labels:
+    app: mz-frontend-svc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mz-frontend
+  template:
+    metadata:
+      labels:
+        app: mz-frontend
+    spec:
+      containers:
+      - name: mz-frontend
+        image: mz-frontend:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000

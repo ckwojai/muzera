@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %}Check History{% endblock %}
+
+{% block content %}
+
+
+
+{% for ch in check_results %}
+
+
+
+<h3 style="margin: auto;width: 80%; text-align: center; margin-top: 20px;  text-transform: uppercase"> No. {{loop.index}}</h3>
+  <h4 style="margin: auto;width: 80%; text-align: center; margin-top: 20px;  text-transform: uppercase">Checked At {{ch['checked_at']}}</h4>
+<div style="width: 90%; margin: auto; text-align: center">
+
+    <p style="font-style: italic">{{ image_file_name }}</p>
+
+    <h3 style="margin-top: 40px"><b>Nearest Composer: <span style="color: green">{{ ch['composer'] }}</span></b></h3>
+    <h3><b>Era : <span style="color: green;">{{ ch['era'] }} %</span></b></h3>    
+    <h4> <a href={{ch['download_link']}}>Music Download</a> </h4>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+    
+    {% endfor %}
+
+
+</div>
+
+{% endblock %}

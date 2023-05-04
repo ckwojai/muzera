@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  Profile
+{% endblock %}
+
+{% block content %}
+
+<style>
+		body {
+			 background: linear-gradient(to bottom right, #ffdb58, #ff69b4);
+			/* Replace #ff99cc and #66ccff with your desired colors */
+			height: 100vh;
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+  <div class="container-fluid py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10 text-center">
+        <h1 class="display-4 mb-5">Profile Details</h1>
+        <div class="row mb-3">
+          <div class="col text-center">
+            <h2 class="text-purple font-weight-bold">{{ username }}</h2>
+            <p class="lead mb-0">Username</p>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col text-center">
+            <h2 class="text-purple font-weight-bold">{{ email }}</h2>
+            <p class="lead mb-0">Email Address</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <h2 class="text-purple font-weight-bold">{{ ID }}</h2>
+            <p class="lead mb-0">User ID</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

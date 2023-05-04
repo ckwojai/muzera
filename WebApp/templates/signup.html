@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+                <link href="static/style.css" rel="stylesheet" type="text/css">
+		<title>Sign Up</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+    	<style>
+		body {
+			font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #ffdb58, #ff69b4);
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+		}
+
+        .muzera {
+            font-size: 80px;
+            font-weight: bold;
+            color: #800080;
+            text-shadow: 3px 3px 0 #fff, 4px 4px 0 #800080;
+            text-align: center;
+            position: center;
+            top: 0;
+            left: 0;
+            margin: 20px 0 0 20px;
+        }
+        </style>
+        <div class="muzera">Music Era Detector</div>
+		<div class="login">
+			<h1>Sign Up</h1>
+			<div id="msg" style="color:red">{{msg}}</div>
+			<form action="/register" method="post">
+
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="email">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="text" name="email" placeholder="email" id="email" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<label for="password2">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password2" placeholder="Confirm Password" id="password2" required>
+				<input type="hidden" value="This$#is#$my#$Secret@#Key!" name="form_secure" id="form_secure">
+				<input type="submit" value="Sign Up">
+				<a style="color:blue" href="{{url_for('home')}}">Back to Login</a><br>
+
+
+			</form>
+		</div>
+	</body>
+</html>

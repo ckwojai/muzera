@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Registration Success</title>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #ffdb58, #ff69b4);
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+		}
+
+        .muzera {
+            font-size: 80px;
+            font-weight: bold;
+            color: #800080;
+            text-shadow: 3px 3px 0 #fff, 4px 4px 0 #800080;
+            text-align: center;
+            position: center;
+            top: 0;
+            left: 0;
+            margin: 20px 0 0 20px;
+        }
+
+      .container {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+        margin: 50px auto;
+        padding: 20px;
+        text-align: center;
+        width: 500px;
+      }
+
+      h1 {
+        color: #1e90ff;
+        font-size: 36px;
+        font-weight: bold;
+        margin-top: 0px;
+      }
+
+      p {
+        color: #444;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+        margin-top: 10px;
+      }
+
+      a {
+        color: #1e90ff;
+        font-size: 18px;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+      <div class="muzera">Music Era Detector</div>
+  </head>
+  <body>
+		<div class="container">
+			<h1 class="title">Registration Success!</h1>
+			{% if msg %}
+                <h3 class="msg">{{ msg }}</h3>
+			{% endif %}
+			<a class="button" href="{{ url_for('home') }}">Go Back to Login</a>
+		</div>
+  </body>
+</html>

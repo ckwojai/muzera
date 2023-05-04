@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}Seach History{% endblock %}
+
+{% block content %}
+
+{% for ch in check_results %}
+
+  <h4 style="margin: auto;width: 80%; text-align: center; margin-top: 20px;  text-transform: uppercase">Checked At {{ch['checked_at'].split('.')[0]}}</h4>
+<div style="width: 90%; margin: auto; text-align: center">
+
+    <p style="font-style: italic">{{ image_file_name }}</p>
+
+    <h3 style="margin-top: 40px"><b>Predicted Label: <span style="color: green">{{ ch['label'] }}</span></b></h3>
+    <h3><b>Accuracy : <span style="color: green;">{{ ch['accuracy'] }} %</span></b></h3>
+    <img src="{{ url_for('send_file', filename=ch['fName'])}}" style ="max-width: 500px; max-height: 450px; margin-top: 30px; margin-bottom: 10px">
+    
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    
+    {% endfor %}
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  Home
+{% endblock %}
+
+{% block content %}
+
+<style>
+  body {
+    background: linear-gradient(to bottom right, #ffdb58, #ff69b4);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  .muzera {
+    font-size: 80px;
+    font-weight: bold;
+    color: #800080;
+    text-shadow: 3px 3px 0 #fff, 4px 4px 0 #800080;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px 0 0 20px;
+  }
+</style>
+
+<div class="muzera">Music Era Detector</div>
+
+<div class="container-fluid py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10 text-center">
+      <h1 class="display-4 mb-5">Welcome back, {{ session['username']|capitalize }}</h1>
+      <p style="font-size: xx-large" class="lead mb-5">Let's start uploading music files.</p>
+      <a href="upload" class="btn btn-primary btn-lg">Go to the Upload page</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

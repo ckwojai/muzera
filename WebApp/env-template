@@ -1,0 +1,7 @@
+databaseHost=localhost
+databaseUser=root
+databasePass=yourFaoritePassword1
+cacheHost=localhost
+cachePort=6379
+appSecretKey=yourFaoritePassword2
+

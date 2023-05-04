@@ -141,6 +141,7 @@ def predict(file_dir):
     joblib_file = "joblib_model.pkl"
 
     model = joblib.load(joblib_file)
-    result = model.predict(X_test)
+    era = model.predict(X_test)[0]
+    proba = max(model.predict_proba(X_test)[0])
 
-    return result[0]
+    return era, proba

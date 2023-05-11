@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}Result{% endblock %}
+
+{% block content %}
+
+    <style>
+		body {
+			background: linear-gradient(to bottom right, #ffdb58, #ff69b4);
+			/* Replace #ff99cc and #66ccff with your desired colors */
+			height: 100vh;
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+
+  <h2 style="margin: auto;width: 90%; text-align: center; margin-top: 20px;  ">Uploaded file Results:</h2>
+<div style="width: 90%; margin: auto; text-align: center">
+    <h4><b>File Name: <span style="color: green;">{{ filename }}</span></b></h4>
+    <h4 style="margin-top: 40px"><b>Era: <span style="color: green">{{ era }}</span></b></h4>
+    <h4><b>Era Accuracy : <span style="color: green;">{{ era_accuracy }} %</span></b></h4>
+	<h4><b>Nearest Composer : <span style="color: green;">{{ composer }}</span></b></h4>
+	<h4><b>Composer Accuracy : <span style="color: green;">{{ composer_accuracy }} %</span></b></h4>
+    
+</div>
+
+{% endblock %}

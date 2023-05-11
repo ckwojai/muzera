@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #ffdb58, #ff69b4);
+            /* Replace #ff99cc and #66ccff with your desired colors */
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .muzera {
+            font-size: 60px;
+            font-weight: bold;
+            color: #800080;
+            text-shadow: 3px 3px 0 #fff, 4px 4px 0 #800080;
+            text-align: center;
+            position: center;
+            top: 0;
+            left: 0;
+            margin: 20px 0 0 20px;
+        }
+    </style>
+
+    <header class="navbar">
+
+        {#     <div style="text-align: center; margin-top: 20px">#}
+        {#        #}
+        {#     </div>#}
+
+        <h3 class="muzera" style="margin: auto; text-align: center; text-transform: uppercase">Music Era Detector</h3>
+
+        <img style="margin: auto; text-align: center; margin-top: 20px;  text-transform: uppercase; width: 600px"
+             src="{{ url_for('static', filename='Composers.jpeg') }}"/>
+                <form action="/upload" method="post" enctype="multipart/form-data"
+              style="margin-top: 100px; width: 80%; text-align: center; margin-left: 100px;"
+              onsubmit="showLoadingSpinner()">
+            <h4>Upload Music files here:</h4>
+            <div id="loading-spinner-container" style="display: none;">
+                <i class="fa fa-spinner fa-spin" style="font-size: 36px;"></i>
+            </div>
+            <span class="btn btn-default btn-file" style="color: black">
+                <input type="file" name="audio" accept="audio/mp3, audio/wav" style="margin-top:20px;">
+            </span><br><br>
+            <input type="submit" value="Upload" class="btn btn-primary">
+        </form>
+
+    </header>
+
+    <script>
+        function showLoadingSpinner() {
+            document.getElementById("loading-spinner-container").style.display = "block";
+        }
+    </script>
+
+
+{% endblock %}

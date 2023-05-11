@@ -1,10 +1,17 @@
-FROM node:14-alpine AS builder
-WORKDIR /app
-COPY app/package.json ./
-RUN npm install
-COPY ./app .
-RUN npm run build
+FROM python:3.9
+RUN apt-get update && apt-get install -y \
+  libsndfile-dev \
+   ffmpeg \
+#   git \
+#   mercurial \
+#   subversion \
+  && rm -rf /var/lib/apt/lists/*
 
-FROM nginx:1.19-alpine AS server
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder ./app/build /usr/share/nginx/html
+WORKDIR /app
+
+COPY app/requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
+
+COPY app .
+CMD "gunicorn" "--bind" "0.0.0.0:5000" "wsgi:app"
+# CMD ["python3", "app.py"

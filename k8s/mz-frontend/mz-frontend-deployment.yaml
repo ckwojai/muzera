@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: mz-frontend
-        image: mz-frontend:latest
+        image: kinchang0811/mz-frontend:latest
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 3000
+        - containerPort: 5000

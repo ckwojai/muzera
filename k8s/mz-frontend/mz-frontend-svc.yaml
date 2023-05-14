@@ -5,10 +5,10 @@ metadata:
     name:   mz-frontend-svc
 
 spec:
-    type: LoadBalancer
+    # type: LoadBalancer
     selector:
         app:   mz-frontend
     ports:
         -   port: 80
-            targetPort: 80
+            targetPort: 5000
             name: mz-frontend-port

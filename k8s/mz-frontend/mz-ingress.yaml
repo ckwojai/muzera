@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mz-ingress
+  annotations: 
+    nginx.ingress.kubernetes.io/proxy-body-size: 100m
+
+spec:
+  ingressClassName: nginx
+  rules:
+   - host: a811e1dd8e65e48ccbad5f8dc48d0b7e-1892299661.us-west-1.elb.amazonaws.com
+     http:
+       paths:
+         - path: /
+           pathType: Prefix
+           backend:
+             service:
+               name: mz-frontend-svc
+               port:
+                 number: 80

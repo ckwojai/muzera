@@ -349,11 +349,12 @@ def music_files():
     # response = s3.list_objects_v2(Bucket=bucket_name, Prefix=f"{folder_name}/")
 
     # create a Config object with signature version set to 's3v4'
-    s3_config = botocore.config.Config(signature_version='s3v4')
-    s3_client = boto3.client('s3', config=s3_config)
+    # s3_config = botocore.config.Config(signature_version='s3v4')
+    # s3_client = boto3.client('s3', config=s3_config)
 
     # list objects in the user's folder
-    response = s3_client.list_objects_v2(Bucket=bucket_name, Prefix=f"{folder_name}/")
+    # response = s3_client.list_objects_v2(Bucket=bucket_name, Prefix=f"{folder_name}/")
+    response = s3.list_objects_v2(Bucket=bucket_name, Prefix=f"{folder_name}/")
 
     # if the user's folder is empty, return an empty list of check_results
     if 'Contents' not in response:
@@ -423,7 +424,7 @@ def upload():
         file = request.files['audio']
         file_contents = file.read()
 
-        # format = file.content_type.split('/')[1].split('-')[-1]
+        format = file.content_type.split('/')[1].split('-')[-1]
         # Extract audio information
         audio = AudioSegment.from_file(io.BytesIO(file_contents), format=format)
         duration = audio.duration_seconds
